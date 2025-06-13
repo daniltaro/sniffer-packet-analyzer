@@ -1,0 +1,21 @@
+# MacOS system files
+.DS_Store
+
+# Build and CMake
+build/
+cmake-build-debug/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Binaries
+Sniffer
+
+# IDE configs 
+.idea/
+.vscode/
+
+# Test files 
+*.pcap
+*.json
