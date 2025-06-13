@@ -35,7 +35,7 @@ make
 
 1. Run the program:
 ```bash
-./Sniffer
+sudo ./Sniffer
 ```
 
 2. Follow the prompts to:
