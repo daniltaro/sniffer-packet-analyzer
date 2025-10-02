@@ -7,7 +7,7 @@ bool threatDetector::isSuspiciousICMP(std::string& type){
     auto time = std::chrono::duration_cast<std::chrono::seconds>(now - start_timeICMP);
     bool flag = false;
     if(time.count() >= 5){
-        if(icmp_count > 5){
+        if(icmp_count > 20){
             start_timeICMP = now;
             threatCount++;
             flag = true;
@@ -46,7 +46,7 @@ bool threatDetector::isSuspiciousTCP(std::string& type){
         }
 
         for(const auto& [ip, ports] : TCPscanner){
-            if(ports.size() > 5){
+            if(ports.size() > 100){
                 flag = true;
                 threatCount++;
 
@@ -80,7 +80,7 @@ bool threatDetector::issuspiciousUDP(std::string& type){
         }
 
         for(const auto& [ip, ports] : UDPscanner){
-            if(ports.size() > 5){
+            if(ports.size() > 100){
                 flag = true;
                 threatCount++;
 
